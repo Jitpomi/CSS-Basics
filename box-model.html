@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <title>Learn CSS</title>
     <style type="text/css">
-       /* * {
+        /* * {
             margin: 0px;
             padding: 0px;
             font-family: sans-serif;
         }*/
+        
         .box-1 {
             width: 300px;
             background-color: skyblue;
@@ -21,11 +22,13 @@
             border: 10px dashed black;
             margin: 50px;
         }
-        .box-sizing{
+        
+        .box-sizing {
             background-color: sandybrown;
-            width: 600px;
-            height:200px ;
+            width: 100vw;
+            height: 200px;
         }
+        
         .item {
             display: inline-block;
             width: 50px;
@@ -34,94 +37,105 @@
             background-color: #84e2e2;
             font-size: 25px;
             padding: 50px;
-            border: 10px solid blue;
-            box-sizing: border-box;
+            border: 50px solid blue;
+            box-sizing: content-box;
         }
-
-        .container{
+        
+        .container {
+            margin: 0 0 50px 0;
             display: flex;
         }
-        .box{
-
+        
+        .box {
             width: 100px;
-
         }
-        .box-blue{
+        
+        .box-blue {
             background-color: blue;
         }
-        .box-green{
+        
+        .box-green {
             background-color: forestgreen;
         }
-        .box-orange{
+        
+        .box-orange {
             background-color: darkorange;
         }
-        .box-purple{
+        
+        .box-purple {
             background-color: purple;
         }
     </style>
 </head>
 
 <body>
-<h1>Box model</h1>
-<p>
-    Everything displayed by CSS is a box., and understanding these boxes is key to being able to create layouts with CSS, or to align items with other items.
-</p>
-<div>
-    <h4>The areas of the box model </h4>
-</div>
-<h3>content box</h3>
-<p>This is the areas where the content, forexample, text, video, image e.t.c live</p>
-<p>It is the inner most area of box model. The content determines the content area size
-<h3>padding box</h3>
-<p>This is the area that surrounds the content area</p>
-<p>We can manage this space using the padding css property. It is possible to define individual sides, that is to
-    say, top, right, bottom and left. Or we can set all at once</p>
-<p>Padding property values can be defined in length, forexample, px, pt, cm, etc., OR in percentage % -
-    which specifies a padding in % of the width of the containing element </p>
-<h3>border box</h3>
-<p>
-    The border box surrounds the padding box and its space is occupied by the border value. The border box is the bounds of your box and the border edge is the limit of what you can visually see. The border property is used to visually frame an element.
-</p>
+    <h1>Box model</h1>
+    <p>
+        Everything displayed by CSS is a box., and understanding these boxes is key to being able to create layouts with CSS, or to align items with other items.
+    </p>
+    <div>
+        <h4>The areas of the box model </h4>
+    </div>
+    <h3>content box</h3>
 
-<h3>Margin box</h3>
-<p>The CSS margin properties are used to create space around elements, outside of any defined borders.
-    With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left).
-</p>
-<h1>Illustration of box model areas</h1>
-<div class="box-1"> Box-1 </div>
-<h4>Block and inline boxes</h4>
-<p>In CSS we broadly have two types of boxes — block boxes and inline boxes. These characteristics refer to how the box behaves in terms of page
-    flow and in relation to other boxes on the page. Boxes also have an inner display type and an outer display type. First, we will explain what we
-    mean by block box and inline box. We will then explain what is meant by an inner and outer display type.</p>
-<h3>If a box has an outer display type of block, it will behave in the following ways:</h3>
-<ul>
-    <li>The box will break onto a new line.</li>
-    <li>The box will extend in the inline direction to fill the space available in its container. In most cases this means that the box will become as wide as its container, filling up 100% of the space available.</li>
-    <li>The width and height properties are respected.</li>
-    <li>Padding, margin and border will cause other elements to be pushed away from the box</li>
-</ul>
-<p>HTML elements like -	Headings, Divs, Paragraph, Section, Ol, ul, Table. By default they use block display type</p>
-<h3>If a box has an outer display type of inline, then:</h3>
-<ul>
-    <li>The box will not break onto a new line.</li>
-    <li>The width and height properties will not apply.</li>
-    <li>Vertical padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.</li>
-    <li>Horizontal padding, margins, and borders will apply and will cause other inline boxes to move away from the box.</li>
-</ul>
-<p>Some HTML elements, such as anchor tags, span, em and strong use inline as their outer display type by default.</p>
-<h1>Box-sizing</h1>
+    <p>This is the areas where the content, forexample, text, video, image e.t.c live</p>
+    <p>It is the inner most area of box model. The content determines the content area size</p>
 
-<div class="box-sizing">
-    <div class="item"> Item-1 </div>
-    <div class="item"> Item-2</div>
-    <div class="item"> Item-3</div>
-</div>
-<div class="container">
-    <div class="box box-orange">1</div>
-    <div class="box box-blue">2</div>
-    <div class="box box-green">3</div>
-    <div class="box box-purple">4</div>
-</div>
+
+    <h3>padding box</h3>
+    <p>This is the area that surrounds the content area</p>
+    <p>We can manage this space using the padding css property. It is possible to define individual sides, that is to say, top, right, bottom and left. Or we can set all at once</p>
+    <p>Padding property values can be defined in length, forexample, px, pt, cm, etc., OR in percentage % - which specifies a padding in % of the width of the containing element </p>
+    <h3>border box</h3>
+    <p>
+        The border box surrounds the padding box and its space is occupied by the border value. The border box is the bounds of your box and the border edge is the limit of what you can visually see. The border property is used to visually frame an element.
+    </p>
+
+    <h3>Margin box</h3>
+    <p>The CSS margin properties are used to create space around elements, outside of any defined borders. With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and
+        left).
+    </p>
+    <h1>Illustration of box model areas</h1>
+    <div class="box-1"> Box-1 </div>
+    <h4>Block and inline boxes</h4>
+    <p>In CSS we broadly have two types of boxes — block boxes and inline boxes. These characteristics refer to how the box behaves in terms of page flow and in relation to other boxes on the page. Boxes also have an inner display type and an outer display
+        type. First, we will explain what we mean by block box and inline box. We will then explain what is meant by an inner and outer display type.</p>
+    <h3>If a box has an outer display type of block, it will behave in the following ways:</h3>
+    <ul>
+        <li>The box will break onto a new line.</li>
+        <li>The box will extend in the inline direction to fill the space available in its container. In most cases this means that the box will become as wide as its container, filling up 100% of the space available.</li>
+        <li>The width and height properties are respected.</li>
+        <li>Padding, margin and border will cause other elements to be pushed away from the box</li>
+    </ul>
+    <p>HTML elements like - Headings, Divs, Paragraph, Section, Ol, ul, Table. By default they use block display type</p>
+    <p style="background-color: darkorange; width: 50vw; height: 50px; margin-top: 50px">This a short paragraph</p>
+    <h3>If a box has an outer display type of inline, then:</h3>
+    <ul>
+        <li>The box will not break onto a new line.</li>
+        <li>The width and height properties will not apply.</li>
+        <li>Vertical padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.</li>
+        <li>Horizontal padding, margins, and borders will apply and will cause other inline boxes to move away from the box.</li>
+    </ul>
+    <p>Some HTML elements, such as anchor tags, span, em and strong use inline as their outer display type by default.</p>
+    <a style="display: block" href="#">Page 1</a>
+    <a style="display: block" href="#">Page 2</a>
+    <a style="display: block" href="#">Page 3</a>
+
+    <p style="display: inline; background-color: #84e2e2; width: 50vw; height: 50px; margin-top: 100px"> 1. This is the areas where the content, forexample, text, video, image e.t.c live </p>
+    <p style="display: inline; background-color: sandybrown; "> 2. It is the inner most area of box model. The content determines the content area size</p>
+    <h1>Box-sizing</h1>
+    <div class="container">
+        <div class="box box-orange">1</div>
+        <div class="box box-blue">2</div>
+        <div class="box box-green">3</div>
+        <div class="box box-purple">4</div>
+    </div>
+    <div class="box-sizing">
+        <div class="item"> Item-1 </div>
+        <div class="item"> Item-2</div>
+        <div class="item"> Item-3</div>
+    </div>
+
 
 
 </body>
