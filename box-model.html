@@ -40,6 +40,27 @@
             border: 50px solid blue;
             box-sizing: content-box;
         }
+        /*box sizing start*/
+        
+        .parent-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .row {
+            width: 100%;
+        }
+        
+        .col {
+            display: inline-block;
+            background-color: cornflowerblue;
+            width: 32.3333%;
+            height: 200px;
+            border: 5px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        /*box sizing end*/
         
         .container {
             margin: 0 0 50px 0;
@@ -103,6 +124,7 @@
     <h3>If a box has an outer display type of block, it will behave in the following ways:</h3>
     <ul>
         <li>The box will break onto a new line.</li>
+
         <li>The box will extend in the inline direction to fill the space available in its container. In most cases this means that the box will become as wide as its container, filling up 100% of the space available.</li>
         <li>The width and height properties are respected.</li>
         <li>Padding, margin and border will cause other elements to be pushed away from the box</li>
@@ -124,18 +146,22 @@
     <p style="display: inline; background-color: #84e2e2; width: 50vw; height: 50px; margin-top: 100px"> 1. This is the areas where the content, forexample, text, video, image e.t.c live </p>
     <p style="display: inline; background-color: sandybrown; "> 2. It is the inner most area of box model. The content determines the content area size</p>
     <h1>Box-sizing</h1>
+
+    <main class="parent-container">
+        <div class="row">
+            <div class="col">Box 1</div>
+            <div class="col">Box 2</div>
+            <div class="col">Box 3</div>
+        </div>
+    </main>
+
     <div class="container">
         <div class="box box-orange">1</div>
         <div class="box box-blue">2</div>
         <div class="box box-green">3</div>
         <div class="box box-purple">4</div>
     </div>
-    <div class="box-sizing">
-        <div class="item"> Item-1 </div>
-        <div class="item"> Item-2</div>
-        <div class="item"> Item-3</div>
-    </div>
-    <div>Added a new line</div>
+
 
 
 </body>
