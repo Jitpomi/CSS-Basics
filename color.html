@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <title>Color</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             margin: 50px;
         }
+        /* hex color codes */
+        /* +++++++++++++++++++++++++ */
         
         main {
             display: flex;
@@ -49,7 +55,68 @@
             outline: rgb(192, 192, 192) solid 1px;
             padding: 5px;
             background-color: rgb(233, 233, 233);
+            display: inline-block;
         }
+        
+        .transparency {
+            display: flex;
+            margin-top: 50px;
+            height: 300px;
+            width: 600px;
+            background-image: url(https://www.unlockfood.ca/EatRightOntario/media/Website-images-resized/How-to-store-fruit-to-keep-it-fresh-resized.jpg);
+        }
+        
+        .child {
+            width: 200px;
+            height: 300px;
+            padding: 10px;
+        }
+        
+        .one {
+            background-color: #00000000;
+        }
+        
+        .two {
+            background-color: #00000080;
+        }
+        
+        .three {
+            background-color: #000000BF;
+        }
+        /* rgb color codes */
+        /* ++++++++++++++++++++++++++++++++
+         */
+        
+        .rgb h1 {
+            color: rgb(183, 21, 64);
+        }
+        
+        .rgb-transparency {
+            font-size: 40px;
+            color: white;
+            font-weight: lighter;
+            display: flex;
+            margin-top: 50px;
+            height: 300px;
+            width: 600px;
+            background-image: url(https://image.shutterstock.com/image-photo/tropical-leaves-textureabstract-nature-leaf-260nw-778131475.jpg);
+            background-size: cover;
+        }
+        
+        .rgb-one {
+            background-color: rgb(0 0 0 / 0%);
+        }
+        
+        .rgb-two {
+            background-color: rgb(0 0 0 / 20%);
+        }
+        
+        .rgb-three {
+            background-color: rgb(0 0 0 / 50%);
+        }
+        /* HSL (Hue, Saturation, Lightness)
+        ++++++++++++++++++++++++++++++++++++
+        */
     </style>
 </head>
 
@@ -66,6 +133,49 @@
             <code>#b71540</code>
         </div>
     </main>
+
+
+    <!--Hex color codes
+    ++++++++++++++++++++++++++++++
+    -->
+    <h1>HEX Codes With Alpha</h1>
+    <ul>
+        <li>0% alpha—which is fully transparent—is 00: <code>#00000000</code> </li>
+        <li>50% alpha is 80: <code>#00000080</code> </li>
+        <li>75% alpha is BF <code>#000000BF</code> </li>
+    </ul>
+    <div class="transparency">
+
+        <div class="child one"> <code>#00000000</code> </div>
+        <div class="child two"> <code>#00000080</code> </div>
+        <div class="child three"> <code>#000000BF</code></div>
+    </div>
+
+    <!-- RGB colors
+            rgb colors
+            **************************
+    -->
+    <div class="rgb">
+        <h4>RGB (Red, Green, Blue)</h4>
+        <p>RGB colors are defined with the rgb() color function, using either numbers or percentages as parameters. The numbers need to be within the 0-255 range and the percentages are between 0% and 100%‌. RGB works on the 0-255 scale, so 255 would be
+            equivalent to 100%, and 0 to 0%.</p>
+        <h1>Example</h1>
+        <p>An alpha is set in rgb() in one of two ways. Either add a / after the red, green and blue parameters, or use the rgba() function. The alpha can be defined with a percentage or a decimal between 0 and 1. For example, to set a 50% alpha black in
+            modern browsers, write: rgb(0 0 0 / 50%) or rgb(0 0 0 / 0.5). For wider support, using the rgba() function, write: rgba(0, 0, 0, 50%) or rgba(0, 0, 0, 0.5).</p>
+        <div class="rgb-transparency">
+            <div class="child rgb-one">0%</div>
+            <div class="child rgb-two">20%</div>
+            <div class="child rgb-three">50%</div>
+        </div>
+    </div>
+
+    <!-- HSL (Hue, Saturation, Lightness)
+    ++++++++++++++++++++++++++++++++++++
+    -->
+    <div class="hsl">
+        <h4>HSL (Hue, Saturation, Lightness)</h4>
+        <p>HSL stands for hue, saturation and lightness. Hue describes the value on the color wheel, from 0 to 360 degrees, starting with red (being both 0 and 360). A hue of 180, or 50% would be in the blue range. It's the origin of the color that we see.</p>
+    </div>
 </body>
 
 </html>
