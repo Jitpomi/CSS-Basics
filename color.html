@@ -5,11 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Color</title>
+    <style>
+        body {
+            margin: 50px;
+        }
+        
+        main {
+            display: flex;
+        }
+        
+        .box {
+            display: inline-block;
+        }
+        
+        .color div {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+        
+        .box-one {
+            background-color: #b71540;
+        }
+        
+        .box-two {
+            background-color: #60a3bc;
+        }
+        
+        .box-three {
+            background-color: #f6b93b;
+        }
+        
+        .color {
+            outline: rgb(199, 199, 199) solid 1px;
+            outline-offset: 15px;
+            width: fit-content;
+            display: inline-block;
+        }
+        
+        code {
+            outline: rgb(192, 192, 192) solid 1px;
+            padding: 5px;
+            background-color: rgb(233, 233, 233);
+        }
+    </style>
 </head>
 
 <body>
-
+    <h4>HEX colors</h4>
+    <main class="color">
+        <div class="box box-one">
+            <code>#b71540</code>
+        </div>
+        <div class="box box-two">
+            <code>#60a3bc</code>
+        </div>
+        <div class="box box-three">
+            <code>#b71540</code>
+        </div>
+    </main>
 </body>
 
 </html>
