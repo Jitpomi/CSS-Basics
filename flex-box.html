@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box</title>
+    <style type="text/css">
+        body {
+            background-color: rgb(12, 22, 31);
+            margin: 0;
+            font-family: Roboto;
+            padding: 20px;
+            padding-bottom: 800px;
+        }
+        
+        ul li {
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            border: 1px solid whitesmoke;
+            width: vw;
+            height: 100vh;
+            /* width: 700px; */
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            /* height: 500px; */
+        }
+        
+        .item {
+            background-color: orange;
+            margin: 5px;
+            font-size: 2em;
+            padding: 2em;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: white;">CSS Flex-box</h1>
+    <h3 style="color: orange;">Properties for the Parent (flex container)</h3>
+    <ul>
+        <li>
+            <h4>Display</h4>
+            <p>This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.</p>
+        </li>
+        <li>
+            <h4>flex-direction</h4>
+            <p>This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal
+                rows or vertical columns.</p>
+            <p>Forexample, row, row-reverse, column, column-reverse</p>
+        </li>
+        <li>
+            <h4>flex-wrap</h4>
+            <p>By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property</p>
+            <p>Forexample, nowrap (default), wrap, wrap-reverse</p>
+        </li>
+        <li>
+            <h4>flex-flow</h4>
+            <p>This is a shorthand for the flex-direction and flex-wrap properties, which together define the flex container’s main and cross axes. The default value is row nowrap.</p>
+        </li>
+        <li>
+            <h4>justify-content</h4>
+            <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the
+                alignment of items when they overflow the line.</p>
+            <p>Forexample: flex-start (default): items are packed toward the start of the flex-direction. </p>
+            <p>flex-end: items are packed toward the end of the flex-direction.</p>
+            <p>start: items are packed toward the start of the writing-mode direction.</p>
+            <p>end: items are packed toward the end of the writing-mode direction.</p>
+            <p>left: items are packed toward left edge of the container, unless that doesn’t make sense with the flex-direction, then it behaves like start.</p>
+            <p>right: items are packed toward right edge of the container, unless that doesn’t make sense with the flex-direction, then it behaves like start.</p>
+            <p>center: items are centered along the line</p>
+            <p>space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line</p>
+            <p>space-around: items are evenly distributed in the line with equal space around them. Note that visually the spaces aren’t equal, since all the items have equal space on both sides. The first item will have one unit of space against the container
+                edge, but two units of space between the next item because that next item has its own spacing that applies.</p>
+            <p>space-evenly: items are distributed so that the spacing between any two items (and the space to the edges) is equal.</p>
+            <p>Note that that browser support for these values is nuanced. For example, space-between never got support from some versions of Edge, and start/end/left/right aren’t in Chrome yet. MDN has detailed charts. The safest values are flex-start,
+                flex-end, and center.</p>
+        </li>
+        <li>
+            <h4>align-items</h4>
+            <p>This defines the default behavior for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).</p>
+            <p>Forexample</p>
+            <p>stretch (default): stretch to fill the container (still respect min-width/max-width)</p>
+            <p>flex-start / start / self-start: items are placed at the start of the cross axis. The difference between these is subtle, and is about respecting the flex-direction rules or the writing-mode rules.</p>
+            <p>flex-end / end / self-end: items are placed at the end of the cross axis. The difference again is subtle and is about respecting flex-direction rules vs. writing-mode rules</p>
+            <p>center: items are centered in the cross-axis</p>
+            <p>baseline: items are aligned such as their baselines align</p>
+
+        </li>
+
+        <li>
+            <h4>Align-content</h4>
+            <p>This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.</p>
+            <p>Note: This property only takes effect on multi-line flexible containers, where flex-wrap is set to either wrap or wrap-reverse). A single-line flexible container (i.e. where flex-wrap is set to its default value, no-wrap) will not reflect
+                align-content.
+            </p>
+            <p>normal (default): items are packed in their default position as if no value was set.</p>
+            <p>flex-start / start: items packed to the start of the container. The (more supported) flex-start honors the flex-direction while start honors the writing-mode direction.</p>
+            <p>flex-end / end: items packed to the end of the container. The (more support) flex-end honors the flex-direction while end honors the writing-mode direction.center: items centered in the container</p>
+            <p>space-between: items evenly distributed; the first line is at the start of the container while the last one is at the end</p>
+            <p>space-around: items evenly distributed with equal space around each line</p>
+            <p>space-evenly: items are evenly distributed with equal space around them</p>
+            <p>stretch: lines stretch to take up the remaining space</p>
+
+        </li>
+        <li>
+            <h4>gap, row-gap, column-gap</h4>
+            <p>The gap property explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.</p>
+
+        </li>
+
+    </ul>
+    <h3 style="color: orange;">
+        Properties for the Children (flex items)
+    </h3>
+    <ul>
+        <li>
+            <h4>
+                order
+            </h4>
+            <p>By default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container.</p>
+
+        </li>
+        <li>
+            <h4>flex-grow</h4>
+            <p>
+                This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up. If all items have flex-grow set to
+                1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, that child would take up twice as much of the space either one of the others (or it will try, at least).
+            </p>
+
+        </li>
+        <li>
+            <h4>flex-shrink</h4>
+            <p>This defines the ability for a flex item to shrink if necessary. Negative numbers are invalid.</p>
+        </li>
+        <li>
+            <h4>flex-basis</h4>
+            <p>
+                This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means “look at my width or height property” (which was temporarily done by the main-size keyword
+                until deprecated). The content keyword means “size it based on the item’s content” – this keyword isn’t well supported yet, so it’s hard to test and harder to know what its brethren max-content, min-content, and fit-content do.
+            </p>
+        </li>
+        <li>
+            <h4>flex</h4>
+            <p>This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. The default is 0 1 auto, but if you set it with a single number value, like flex: 5;, that
+                changes the flex-basis to 0%, so it’s like setting flex-grow: 5; flex-shrink: 1; flex-basis: 0%;.</p>
+            <p>It is recommended that you use this shorthand property rather than set the individual properties. The shorthand sets the other values intelligently.</p>
+        </li>
+        <li>
+            <h4>align-self</h4>
+            <p>This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items. Please see the align-items explanation to understand the available values.</p>
+        </li>
+    </ul>
+    <h1 style="color: white;">Illustration</h1>
+    <div class=" container ">
+        <div class="item box-1">1</div>
+        <div class="item box-2">2</div>
+        <div class="item box-3">3</div>
+        <div class="item box-4">4</div>
+        <div class="item box-5">5</div>
+        <div class="item box-6">6</div>
+        <div class="item box-7">7</div>
+        <div class="item box-8">8</div>
+        <div class="item box-9">9</div>
+        <div class="item box-10">10</div>
+    </div>
+
+</body>
+
+</html>
