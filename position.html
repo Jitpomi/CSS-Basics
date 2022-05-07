@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Positioning</title>
+    <style type="text/css">
+        /* default settings */
+        
+        .container {
+            padding: 20px;
+            background-color: rgb(17, 14, 34);
+            border: 2px dashed white;
+        }
+        
+        .box {
+            background-color: blueviolet;
+            margin-right: 5px;
+            padding: 10px;
+            color: black;
+            width: 200px;
+        }
+        /* Sticky position */
+        
+        .list-container {
+            margin-top: 10px;
+        }
+        
+        .list-header {
+            color: black;
+            background-color: #ed1f83;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .list-group ul li {
+            list-style: none;
+            /* border-bottom: 1px solid white; */
+            padding-top: 10px;
+            padding-bottom: 10px;
+            transition: all 0.8s ease;
+        }
+        
+        .list-group ul li:hover {
+            /* border-left: 5px solid orangered; */
+            /* padding-left: 15px; */
+            color: #ed1f83;
+            cursor: pointer;
+            border-bottom: 1px solid #ed1f83;
+            list-style: disc;
+        }
+        /* Global setting */
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 600px;
+            color: whitesmoke;
+            background-color: rgb(25, 26, 42);
+            box-sizing: border-box;
+        }
+        /* css positioning */
+        
+        .box-one {}
+        
+        .box-two {}
+        
+        .box-three {}
+        
+        .box-four {}
+        
+        .box-five {}
+        /* sticky positioning illustration */
+        
+        .list-header {
+            /* position: sticky;
+          top: 0; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h1>CSS positioning</h1>
+        <p>The CSS position property is used to specify how the element will be displayed on the page. The top, right, bottom, and left CSS position properties determine the final location of the element.</p>
+        <h1>types</h1>
+        <h4 style="color: orange;">Static positioning</h4>
+        <p>The element is positioned according to the normal flow of the document. The top, right, bottom, left, and z-index properties have no effect. This is the default value.</p>
+        <h4 style="color: orange;">Relative positioning</h4>
+        <p>The element is positioned according to the normal flow of the document, and then offset relative to itself based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements; thus, the space given
+            for the element in the page layout is the same as if position were static.</p>
+        <h4 style="color: orange;">Absolute positioning</h4>
+        <p>At this value, the element also ignores the normal document flow, but rather than being positioned according to the viewport, it’s positioned relative to the nearest positioned ancestor. However, like the fixed value, there's no space created
+            for it in the page layout.</p>
+        <p>If there’s no positioned ancestor, the element is positioned relative to the containing block and moves with scrolling.</p>
+        <h4 style="color: orange;">Fixed positioning</h4>
+        <p>At this value, the element disregards the normal render flow. Instead, the element is positioned relative to the viewport (the area the user can see). It doesn’t move, even if the page is scrolled. There's no space left where it would have been
+            located in the page layout. Use the top, right, bottom, and left values to set the element's final position. Using the fixed value automatically establishes a new stacking context.</p>
+        <h4 style="color: orange;">Sticky position</h4>
+        <p>The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top,
+            right, bottom, and left. The offset does not affect the position of any other elements.</p>
+
+    </div>
+    <div>
+        <h1>Illustrations</h1>
+        <div class="container">
+            <div style="background-color:#FDA7DF;" class="box box-one">One</div>
+            <div style="background-color: #833471;" class="box  box-two">Two</div>
+            <div style="background-color: #F79F1F;" class="box box-three">Three</div>
+            <div class="box box-four">Four</div>
+            <div style="background-color: white;" class="box box-five">Five</div>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="list">
+            <div class="list-group">
+                <div class="list-header">A - </div>
+                <ul>
+                    <li>Altair Jahi</li>
+                    <li>Alvise Jumoke.</li>
+                    <li>Amand Kamuzu.</li>
+                    <li>Anand Khafra.</li>
+                    <li>Antares Kazemde.</li>
+                    <li>Aileen Reyes</li>
+                    <li>Annabel Patrick</li>
+                    <li>Antwan Swanson</li>
+                    <li>Alex Cardenas</li>
+                    <li>Alaina Walters</li>
+
+                </ul>
+            </div>
+            <div class="list-group">
+                <div class="list-header">B - </div>
+                <ul>
+                    <li>Bennett.</li>
+                    <li>Bentley.</li>
+                    <li>Brandon Ronald.</li>
+                    <li>Brayden Khafra.</li>
+                    <li>Brooks Grace.</li>
+                    <li>Brock Bean</li>
+                    <li>Brendan Foley</li>
+                    <li>Braylon Delacruz</li>
+                    <li>Brayan Morris</li>
+                    <li>Brittany Ho</li>
+                    <li>Bailee Ochoa</li>
+                    <li>Brittany Hanna</li>
+                    <li>Bailey Howard</li>
+                    <li>Badu Erykah</li>
+
+                </ul>
+            </div>
+            <div class="list-group">
+                <div class="list-header">C - </div>
+                <ul>
+                    <li>Charlie Tesla</li>
+                    <li>Charlotte Timothy.</li>
+                    <li>Caitlin John.</li>
+                    <li>Cameron Reuben</li>
+                    <li>Conor Widen.</li>
+                    <li>Cabot John</li>
+                    <li>Caesar Augustus</li>
+                    <li>Caan James</li>
+                    <li>Campbell Malcolm</li>
+                    <li>Capriati Jennifer</li>
+                    <li>Captain Kangaroo</li>
+                    <li>Carey Mariah</li>
+                    <li>Cardellini Linda</li>
+                    <li>Carle Eric</li>
+
+                </ul>
+            </div>
+            <div class="list-group">
+                <div class="list-header">D - </div>
+                <ul>
+                    <li>Dunn Gaines.</li>
+                    <li>Donaldson Andersen.</li>
+                    <li>Daniel Gutierrez.</li>
+                    <li>Damian Autumn.</li>
+                    <li>Donaldson Gustavo.</li>
+                    <li>Dada Idi Amin</li>
+                    <li>Dafoe Willem</li>
+                    <li>Dalai Lama</li>
+                    <li>Dalton Timothy</li>
+                    <li>Dangerfield Rodney</li>
+                    <li>Darcy Fitzwilliam</li>
+                    <li>Darren James</li>
+                    <li>Darwin Charles</li>
+                    <li>Davenport Lindsay</li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
