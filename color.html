@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <title>Color</title>
     <style>
-        * {
+        *,
+        *::before,
+         ::after {
             box-sizing: border-box;
+        }
+        
+        code {
+            outline: rgb(192, 192, 192) solid 1px;
+            padding: 5px;
+            background-color: rgb(233, 233, 233);
+            display: inline-block;
         }
         
         body {
@@ -48,13 +57,6 @@
             outline: rgb(199, 199, 199) solid 1px;
             outline-offset: 15px;
             width: fit-content;
-            display: inline-block;
-        }
-        
-        code {
-            outline: rgb(192, 192, 192) solid 1px;
-            padding: 5px;
-            background-color: rgb(233, 233, 233);
             display: inline-block;
         }
         
@@ -101,6 +103,12 @@
             width: 600px;
             background-image: url(https://image.shutterstock.com/image-photo/tropical-leaves-textureabstract-nature-leaf-260nw-778131475.jpg);
             background-size: cover;
+        }
+        
+        .rgb-box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(24, 45, 85, 55%);
         }
         
         .rgb-one {
@@ -159,6 +167,8 @@
         <p>RGB colors are defined with the rgb() color function, using either numbers or percentages as parameters. The numbers need to be within the 0-255 range and the percentages are between 0% and 100%‌. RGB works on the 0-255 scale, so 255 would be
             equivalent to 100%, and 0 to 0%.</p>
         <h1>Example</h1>
+
+        <div class="rgb-box"></div>
         <p>An alpha is set in rgb() in one of two ways. Either add a / after the red, green and blue parameters, or use the rgba() function. The alpha can be defined with a percentage or a decimal between 0 and 1. For example, to set a 50% alpha black in
             modern browsers, write: rgb(0 0 0 / 50%) or rgb(0 0 0 / 0.5). For wider support, using the rgba() function, write: rgba(0, 0, 0, 50%) or rgba(0, 0, 0, 0.5).</p>
         <div class="rgb-transparency">
