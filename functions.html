@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="style.css">
     <title>Css functions</title>
     <style>
+        .header {
+            /* margin-top: 0; */
+            display: block;
+            position: fixed;
+            top: 0;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+        
+        .bar {
+            /* position: fixed; */
+            background-color: rgb(19, 19, 30);
+            height: 90px;
+            top: 0;
+            position: sticky;
+            margin-bottom: 10px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: cornflowerblue;
+        }
+        
+        .header h1 {
+            margin-top: 0;
+        }
+        
         * {
             box-sizing: border-box;
         }
@@ -26,6 +53,21 @@
         .notes-section {
             /* background-color: rgb(28, 28, 28); */
             padding: 20px;
+            overflow: scroll;
+            height: 100vh;
+            scroll-behavior: auto;
+            scrollbar-color: gray blue;
+            scrollbar-width: 5px;
+            overflow-x: hidden;
+        }
+        
+        .notes-section::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .notes-section::-webkit-scrollbar-thumb {
+            width: 4px;
+            /* background-color: orange; */
         }
         
         .illustration {
@@ -33,23 +75,94 @@
             padding: 20px;
         }
         
+        h4 {
+            color: black;
+            padding: 0.5rem;
+            background-color: orange;
+        }
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px dashed white;
+        }
+        
+        .image {
+            width: 400px;
+            height: 200px;
+            object-fit: cover;
+        }
+        
         body {
             font-family: raleway;
             background-color: rgb(19, 19, 30);
             color: white;
+            position: relative;
+            /* margin: 0; */
+        }
+        
+        .post :is(h1, h2, h3) {
+            color: purple;
+            line-height: 1.2;
+            text-decoration: line-through;
+        }
+        
+         :root {
+            --primary: rgb(215, 61, 30);
+            --body-text: 19px;
+        }
+        
+        .box {
+            background-color: var(--primary);
+        }
+        
+        a::after {
+            content: attr(href)
+        }
+        
+        .image {
+            background-image: url("https://images.unsplash.com/photo-1617503752587-97d2103a96ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
         }
     </style>
 </head>
 
 <body>
-    <h1>CSS functions</h1>
+    <div class="bar">
+        <h1 class="header">CSS functions</h1>
+    </div>
+
     <main>
         <section class="notes-section">
             <p>A function is a named, self-contained piece of code that completes a specific task. A function is named so you can call it within your code and you can pass data into the function. This is known as passing arguments.</p>
+            <h4>Functional selectors #</h4>
+            <p>functions like :is() and :not(). The arguments passed into these functions are CSS selectors, which are then evaluated. If there is a match with elements, the rest of the CSS rule will be applied to them.</p>
+            <h4>Custom properties and var() #</h4>
+            <p>A custom property is a variable which allows you to tokenize values in your CSS code. Custom properties are also affected by the cascade which means they can be contextually manipulated or redefined. A custom property must be prefixed with
+                two dashes (--) and are case sensitive.</p>
+            <p>The var() function takes one required argument: the custom property that you are trying to return as a value. In the above snippet, the var() function has --base-color passed as an argument. If --base-color is defined, then var() will return
+                the value.</p>
+            <h4>Functions that return a value #</h4>
+            <p>The var() function is just one of the CSS functions that return a value. Functions like attr() and url() follow a similar structure to var()— you pass one or more arguments and use them on the right side of your CSS declaration.</p>
+            <p>The url() function takes a string URL and is used to load images, fonts and content. If a valid URL isn't passed in or the resource that the URL points to can't be found, nothing will be returned by the url() function.</p>
         </section>
         <div style="background-color: white;"></div>
         <section class="illustration">
             <h1>CSS functions</h1>
+            <div class="post">
+                <h1>Hello css wolrd</h1>
+                <h2>Hello am H2 </h2>
+                <h3>Css bsics</h3>
+                <hr>
+                <div class="box"></div>
+                <br>
+                <div class="some-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas reiciendis, distinctio laboriosam ab enim adipisci tempora culpa fugit dolor, eius unde assumenda dolorem.
+                </div>
+                <p><a some="Hello css" href="www.google.com">Please visit</a></p>
+                <div class="image">
+
+                </div>
+            </div>
         </section>
     </main>
 
