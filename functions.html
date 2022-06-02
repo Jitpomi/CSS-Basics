@@ -100,16 +100,21 @@
             position: relative;
             /* margin: 0; */
         }
-        
-        .post :is(h1, h2, h3) {
+        /* .post :is(h1, h2, h3) {
             color: purple;
             line-height: 1.2;
             text-decoration: line-through;
-        }
+        } */
         
          :root {
             --primary: rgb(215, 61, 30);
             --body-text: 19px;
+            --line-height: 30px;
+        }
+        
+        .some-text {
+            font-size: var(--body-text);
+            line-height: var(--line-height);
         }
         
         .box {
@@ -117,11 +122,27 @@
         }
         
         a::after {
-            content: attr(href)
+            content: attr(class)
         }
         
         .image {
             background-image: url("https://images.unsplash.com/photo-1617503752587-97d2103a96ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+        }
+        
+        .element {
+            width: 400px;
+            height: 150px;
+            border: 1px solid white;
+            resize: both;
+        }
+        
+        .child {
+            width: calc(100% - 2rem);
+            background-color: papayawhip;
+            padding: 1em;
+            color: black;
+            max-width: none;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -144,23 +165,31 @@
             <h4>Functions that return a value #</h4>
             <p>The var() function is just one of the CSS functions that return a value. Functions like attr() and url() follow a similar structure to var()— you pass one or more arguments and use them on the right side of your CSS declaration.</p>
             <p>The url() function takes a string URL and is used to load images, fonts and content. If a valid URL isn't passed in or the resource that the URL points to can't be found, nothing will be returned by the url() function.</p>
+            <h4>Mathematical expressions #</h4>
+            <p>The calc() function takes a single mathematical expression as its parameter. This mathematical expression can be a mix of types, such as length, number, angle and frequency. Units can be mixed too.</p>
         </section>
         <div style="background-color: white;"></div>
         <section class="illustration">
             <h1>CSS functions</h1>
             <div class="post">
                 <h1>Hello css wolrd</h1>
-                <h2>Hello am H2 </h2>
+                <h4>Hello am H2 </h4>
                 <h3>Css bsics</h3>
+                <p>Lorem ipsum dolor sit.</p>
                 <hr>
                 <div class="box"></div>
                 <br>
                 <div class="some-text">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas reiciendis, distinctio laboriosam ab enim adipisci tempora culpa fugit dolor, eius unde assumenda dolorem.
                 </div>
-                <p><a some="Hello css" href="www.google.com">Please visit</a></p>
+                <p><a class="hello-css" href="www.google.com">Please visit</a></p>
                 <div class="image">
-
+                </div>
+                <br>
+                <div class="element">
+                    <p class="child">
+                        im a child with width of <code>calc(100% - 2)</code>. I fill up my parent space, except or 2rem
+                        </pc>
                 </div>
             </div>
         </section>
