@@ -13,11 +13,13 @@
         }
         
         h4 {
-            color: rgb(30, 30, 30);
+            color: wheat;
             padding: 0.3rem;
-            background-color: orchid;
+            background: rgb(192, 57, 43);
+            background: linear-gradient(90deg, rgba(192, 57, 43, 1) 0%, rgba(142, 68, 173, 1) 100%);
             display: table;
             padding: 10px;
+            border-radius: 2px;
         }
         
         .notes {
@@ -43,6 +45,23 @@
             top: 50px;
         }
         
+        .circle {
+            width: 90px;
+            height: 90px;
+            background-color: orange;
+            border-radius: 100%;
+            position: relative;
+            /* animation-name: change-color; */
+            /* animation-duration: 1s; */
+            /* animation-timing-function: ease; */
+            /* animation-timing-function: steps(3, start); */
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: reverse; */
+            /* animation-delay: 5s; */
+            /* animation-play-state: paused; */
+            /* animation-fill-mode: both; */
+        }
+        
         body {
             /* position: relative; */
             margin-top: 50px;
@@ -55,29 +74,49 @@
             column-gap: 100px;
         }
         
-        .circle {
-            width: 90px;
-            height: 90px;
-            background-color: orange;
-            border-radius: 100%;
-            position: relative;
-            animation-name: change-color;
-            animation-duration: 1s;
-            animation-timing-function: cubic-bezier(.43, -0.35, .63, 1.47);
-            /* animation-timing-function: steps(3, start); */
-            /* animation-iteration-count: infinite; */
-            /* animation-direction: reverse; */
-            /* animation-delay: 5s; */
-            /* animation-play-state: paused; */
-            /* animation-fill-mode: both; */
+        button {
+            padding: 10px 25px;
+            border-radius: 2px;
+            background-color: turquoise;
+            border: none;
+            margin-top: 3rem;
         }
         
-        @keyframes change-color {
+        button:hover {
+            background-color: rgb(50, 188, 174);
+        }
+        
+        .circle-2 {
+            width: 90px;
+            height: 90px;
+            background-color: rgb(255, 0, 179);
+            border-radius: 100%;
+        }
+        
+        .animation-1 {
+            animation-name: move;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: alternate-reverse; */
+            /* animation-delay: 5s; */
+            /* border: 10px solid red; */
+            animation-fill-mode: both;
+        }
+        
+        .animation-2 {
+            animation-name: move;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes move {
             from {
-                transform: translateX(0px);
+                transform: translateX(0);
             }
             to {
-                transform: translateX(200px);
+                transform: translateX(300px);
             }
         }
     </style>
@@ -191,12 +230,23 @@
     </div>
     <div class="line"></div>
     <div class="illustrations">
-        <div class="circle"></div>
+        <div class="circle" id="circle"></div>
+        <br><br>
+        <!-- <div class="circle-2" id="circle-2"></div> -->
+        <!-- <h1 class="animation-1">Move</h1> -->
+        <button id="start">Start</button>
 
 
     </div>
 
+    <script>
+        const button = document.getElementById('start');
+        button.addEventListener('click', function() {
 
+            document.getElementById('circle').classList.toggle('animation-1')
+            document.getElementById('circle-2').classList.add('animation-2')
+        })
+    </script>
 </body>
 
 </html>
