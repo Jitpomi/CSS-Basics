@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animations</title>
+    <style>
+        h3 {
+            color: coral;
+        }
+        
+        h4 {
+            color: wheat;
+            padding: 0.3rem;
+            background: rgb(192, 57, 43);
+            background: linear-gradient(90deg, rgba(192, 57, 43, 1) 0%, rgba(142, 68, 173, 1) 100%);
+            display: table;
+            padding: 10px;
+            border-radius: 2px;
+        }
+        
+        .notes {
+            overflow: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .notes::-webkit-scrollbar {
+            display: none;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .line {
+            background-color: aliceblue;
+            width: 0.05rem;
+            height: 100vh;
+            position: fixed;
+            left: 500px;
+            top: 50px;
+        }
+        
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: chocolate;
+        }
+        
+        body {
+            /* position: relative; */
+            margin-top: 50px;
+            margin-left: 50px;
+            background-color: rgb(33, 33, 46);
+            color: aliceblue;
+            display: grid;
+            grid-template-columns: 400px 0.1em 1fr;
+            grid-template-rows: 100vh;
+            column-gap: 100px;
+        }
+        
+        .menu {
+            display: flex;
+            /* padding: 0; */
+            flex-direction: column;
+            width: 400px;
+            height: 150px;
+            /* border: 1px solid white; */
+            /* overflow-x: hidden; */
+        }
+        
+        .item {
+            width: max-content;
+        }
+        
+        .menu-item {
+            transform-origin: 0 0;
+            transform: translateX(-100px);
+            opacity: 0;
+            transition-property: transform, opacity;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+        }
+        
+        .square {
+            transition-property: transform, background-color;
+            transition-duration: 2s;
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            transition-delay: 2s;
+        }
+        
+        .square:hover {
+            transform: scale(0.5);
+            background-color: blueviolet;
+        }
+        
+        .menu:hover .menu-item {
+            transform: translateX(0);
+            opacity: 100%;
+        }
+        
+        .menu .item:nth-of-type(1) {
+            transition-delay: 0ms;
+        }
+        
+        .menu .item:nth-of-type(2) {
+            transition-delay: 100ms;
+        }
+        
+        .menu .item:nth-of-type(3) {
+            transition-delay: 200ms;
+        }
+        
+        .menu .item:nth-of-type(4) {
+            transition-delay: 300ms;
+        }
+        
+        .menu .item:nth-of-type(5) {
+            transition-delay: 400ms;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="notes">
+        <h1>Transitions</h1>
+        <p>Transitions enable you to define the transition between two states of an element. Different states may be defined using pseudo-classes like :hover or :active or dynamically set using JavaScript.</p>
+        <h4>Transition properties #</h4>
+
+        <ol>
+            <li>
+                <h3>transition-property #</h3>
+                <p>The transition-property property specifies which style(s) to transition.
+                </p>
+            </li>
+            <li>
+                <h3>transition-duration #</h3>
+                <p>The transition-duration property is used to define the length of time that a transition will take to complete.
+                </p>
+                <p>transition-duration accepts time units, either in seconds (s) or milliseconds (ms) and defaults to 0s.</p>
+            </li>
+            <li>
+                <h3>transition-timing-function #</h3>
+                <p>Use the transition-timing-function property to vary the speed of a CSS transition over the course of the transition-duration.
+                </p>
+                <p>By default, CSS will transition your elements at a constant speed (transition-timing-function: linear). Linear transitions can end up looking somewhat artificial, though: in real life, objects have weight and can't stop and start instantly.
+                    Easing into or out of a transition can make your transitions more lively and natural.</p>
+            </li>
+            <li>
+                <h3>transition-delay #</h3>
+                <p>Use the transition-delay property to specify the time at which a transition will start. If transition-duration is not specified, transitions will start instantly because the default value is 0s. This property accepts a time unit, for example
+                    seconds (s) or milliseconds (ms).
+                </p>
+                <p>This property is useful for staggering transitions, achieved by setting a longer transition-delay for each subsequent element in a group.</p>
+            </li>
+
+
+        </ol>
+    </div>
+    <div class="line"></div>
+    <div class="illustrations">
+        <h1>illustrations</h1>
+
+        <div class="square">
+
+        </div>
+        <br><br>
+        <p>Menu</p>
+        <button id="button">
+            Menu
+        </button>
+        <div class="menu">
+            <div class="menu-item item">Home</div>
+            <div class="menu-item item">About-us</div>
+            <div class="menu-item item">Contact Us</div>
+            <div class="menu-item item">Login</div>
+            <div class="menu-item item">Locate</div>
+        </div>
+    </div>
+</body>
+<script>
+    const button = document.getElementById('button');
+    button.addEventListener('click', function() {
+
+        document.querySelectorAll('item').classList.toggle('animate')
+        for (i in item) {
+            item.classList.toggle('animate');
+        }
+
+        // document.getElementById('circle-2').classList.add('animation-2')
+    })
+</script>
+
+</html>
